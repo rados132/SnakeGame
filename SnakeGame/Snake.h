@@ -1,23 +1,33 @@
 #ifndef _snake_h_
 #define _snake_h_
 
-#include "Field.h"
+#include "SnakeField.h"
 
 class Snake
 {
+public:
+	Snake()
+	{
+
+	}
+	~Snake();
+
+protected:
+	const Snake& addToTail(const SnakeField& field);
+
 private:
 	struct Node
 	{
-		Node(Field& field, Node* next = nullptr)
-			: snakeField(&field), next(next)
+		Node(const SnakeField& field)
+			: field(field)
 		{
 		}
-		Field* snakeField;
-		Node* next;
+		SnakeField field;
+		Node* next = nullptr;
 	};
 	Node* head = nullptr;
 	Node* tail = nullptr;
-	int snakeLength = 2;
+	int snakeLength = 0;
 };
 
 #endif // !_snake_h_

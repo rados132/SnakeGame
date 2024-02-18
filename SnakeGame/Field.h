@@ -11,6 +11,8 @@ public:
 	{
 	}
 
+	friend bool operator==(Field& lhs, Field& rhs);
+
 private:
 	int _x, _y;
 };
