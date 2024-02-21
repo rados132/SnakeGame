@@ -11,6 +11,9 @@ public:
 	{
 	}
 
+	int& getX() { return _x; }
+	int& getY() { return _y; }
+
 	friend bool operator==(Field& lhs, Field& rhs);
 
 private:

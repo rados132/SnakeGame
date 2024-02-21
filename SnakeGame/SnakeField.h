@@ -3,15 +3,18 @@
 
 #include "Field.h"
 
-enum Direction { UP = 0, DOWN, LEFT, RIGHT };
+enum Direction { STOP = 0, UP, DOWN, LEFT, RIGHT };
 
 class SnakeField : public Field
 {
 public:
-	SnakeField(int x, int y, Direction direction)
+	SnakeField(int x, int y, Direction direction = STOP)
 		: Field(x, y), _direction(direction)
 	{
 	}
+
+	void setDirection(Direction newDirection);
+	void moveField();
 
 private:
 	FieldType type = SNAKE;
