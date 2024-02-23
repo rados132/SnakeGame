@@ -13,11 +13,11 @@ public:
 	{
 	}
 
+	Direction getDirection();
 	void setDirection(Direction newDirection);
 	void moveField();
 
 private:
-	FieldType type = SNAKE;
 	Direction _direction;
 };
 

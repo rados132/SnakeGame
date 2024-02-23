@@ -1,8 +1,6 @@
 #ifndef _field_h_
 #define _field_h_
 
-enum FieldType { WALL, SNAKE, FRUIT };
-
 class Field
 {
 public:

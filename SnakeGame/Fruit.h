@@ -4,17 +4,14 @@
 #include "Field.h"
 #include <cstdlib>
 
-extern int width, height;
+extern const int width, height;
 
 class Fruit : public Field
 {
 public:
-	Fruit() : Field(rand() % width, rand() % height)
+	Fruit() : Field(rand() % (width - 1), rand() % (height - 1))
 	{
 	}
-
-private:
-	FieldType type = FRUIT;
 };
 
 #endif // !_fruit_h_

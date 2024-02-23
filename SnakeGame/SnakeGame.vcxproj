@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>Default</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,17 +129,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Field.cpp" />
-    <ClCompile Include="GameCanvas.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="GameRunner.cpp" />
+    <ClCompile Include="SnakeField.cpp" />
+    <ClCompile Include="SnakeGame.cpp" />
     <ClCompile Include="Snake.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Field.h" />
     <ClInclude Include="Fruit.h" />
-    <ClInclude Include="GameCanvas.h" />
+    <ClInclude Include="GameRunner.h" />
     <ClInclude Include="Snake.h" />
     <ClInclude Include="SnakeField.h" />
-    <ClInclude Include="Wall.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

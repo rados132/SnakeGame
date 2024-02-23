@@ -3,27 +3,31 @@
 
 #include "SnakeField.h"
 
+extern const int width, height;
+
 class Snake
 {
 public:
-	Snake()
-	{
-
-	}
-	~Snake();
+	Snake();
+	//~Snake();
+	
+	void draw();
+	void setDirection(Direction newDirection);
+	void moveSnake();
 
 protected:
-	const Snake& addToTail(const SnakeField& field);
+	Snake& addToTail(int x, int y);
+	bool isSnakeField(int x, int y);
 
 private:
 	struct Node
 	{
-		Node(const SnakeField& field)
-			: field(field)
+		Node(int x, int y, Node* next = nullptr)
+			: field(x, y), next(next)
 		{
 		}
 		SnakeField field;
-		Node* next = nullptr;
+		Node* next;
 	};
 	Node* head = nullptr;
 	Node* tail = nullptr;
