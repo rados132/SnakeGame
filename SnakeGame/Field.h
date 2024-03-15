@@ -9,8 +9,10 @@ public:
 	{
 	}
 
-	int& getX() { return _x; }
-	int& getY() { return _y; }
+	int getX() const;
+	int getY() const;
+	void setX(int x);
+	void setY(int y);
 
 	friend bool operator==(Field& lhs, Field& rhs);
 
