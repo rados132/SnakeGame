@@ -2,13 +2,36 @@
 
 extern const int width, height;
 
-Direction SnakeField::getDirection()
+Direction SnakeField::getDirection() const
 {
 	return _direction;
 }
 
 void SnakeField::setDirection(Direction newDirection)
 {
+	switch (_direction)
+	{
+	case STOP:
+		break;
+	case UP:
+		if (newDirection == DOWN)
+			return;
+		break;
+	case DOWN:
+		if (newDirection == UP)
+			return;
+		break;
+	case LEFT:
+		if (newDirection == RIGHT)
+			return;
+		break;
+	case RIGHT:
+		if (newDirection == LEFT)
+			return;
+		break;
+	default:
+		break;
+	}
 	_direction = newDirection;
 }
 

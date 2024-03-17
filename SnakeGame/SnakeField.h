@@ -13,7 +13,7 @@ public:
 	{
 	}
 
-	Direction getDirection();
+	Direction getDirection() const;
 	void setDirection(Direction newDirection);
 	void moveField();
 
