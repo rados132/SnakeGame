@@ -57,12 +57,12 @@ void SnakeField::moveField()
 		break;
 	}
 
-	if (getX() == 0 || getX() == width)
+	if (getX() == 1 || getX() == width - 1)
 	{
-		setX(getX() <= 0 ? width - 1 : 1);
+		setX(getX() <= 1 ? width - 1 : 1);
 	}
-	if (getY() == 0 || getY() == height)
+	if (getY() == 1 || getY() == height)
 	{
-		setY(getY() <= 0 ? height - 1 : 1);
+		setY(getY() <= 1 ? height - 1 : 1);
 	}
 }

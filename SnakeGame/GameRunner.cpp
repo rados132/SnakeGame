@@ -30,6 +30,7 @@ void GameRunner::loop()
 
 void GameRunner::draw()
 {
+	// popraviti ispis zidova
 	using std::cout;
 	system("cls");
 	for (int i = 0; i < width; i++)
