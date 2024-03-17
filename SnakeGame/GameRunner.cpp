@@ -48,9 +48,9 @@ void GameRunner::draw()
 	}
 	for (int i = 0; i < width; i++)
 		cout << '#';
-	//Sleep(10);
+	Sleep(10);
 	snake.draw();
-	//Sleep(10);
+	Sleep(10);
 }
 
 void GameRunner::getInput()
