@@ -14,7 +14,7 @@ void GameRunner::setup()
 	HANDLE out = GetStdHandle(STD_OUTPUT_HANDLE);
 	CONSOLE_CURSOR_INFO     cursorInfo;
 	GetConsoleCursorInfo(out, &cursorInfo);
-	cursorInfo.bVisible = false; // set the cursor visibility
+	cursorInfo.bVisible = false;
 	SetConsoleCursorInfo(out, &cursorInfo);
 }
 
@@ -48,9 +48,9 @@ void GameRunner::draw()
 	}
 	for (int i = 0; i < width; i++)
 		cout << '#';
-	Sleep(20);
+	//Sleep(10);
 	snake.draw();
-	Sleep(20);
+	//Sleep(10);
 }
 
 void GameRunner::getInput()

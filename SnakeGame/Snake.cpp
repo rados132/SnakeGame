@@ -4,21 +4,21 @@
 
 Snake::Snake()
 {
-    head = tail = new Node(width / 2, height / 2);
-    snakeLength++;
+    addToTail(width / 2, height / 2);
     addToTail(width / 2, height / 2 + 1);
+    addToTail(width / 2, height / 2 + 2);
 }
 
 Snake& Snake::addToTail(int x, int y)
 {
-    tail = new Node(x, y, tail);
+    tail = (head ? tail->next : head) = new Node(x, y);
     snakeLength++;
     return *this;
 }
 
 bool Snake::isSnakeField(int x, int y)
 {
-    for (Node* tmp = tail; tmp != nullptr; tmp = tmp->next)
+    for (Node* tmp = head; tmp != nullptr; tmp = tmp->next)
     {
         if (tmp->field.getX() == x && tmp->field.getY() == y)
             return true;
@@ -54,10 +54,17 @@ void Snake::setDirection(Direction newDirection)
 
 void Snake::moveSnake()
 {
+    if (head->field.getDirection() == STOP) return;
+    int prevX = head->field.getX();
+    int prevY = head->field.getY();
     head->field.moveField();
-    for (Node* current = tail; current != head; current = current->next)
+    for (Node* current = head->next; current != nullptr; current = current->next)
     {
-        current->field.moveField();
-        current->field.setDirection(current->next->field.getDirection());
+        int tmpX = current->field.getX();
+        int tmpY = current->field.getY();
+        current->field.setX(prevX);
+        current->field.setY(prevY);
+        prevX = tmpX;
+        prevY = tmpY;
     }
 }
