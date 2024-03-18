@@ -2,7 +2,6 @@
 #define _gamerunner_h_
 
 #include "Snake.h"
-
 #include <Windows.h>
 
 extern const int width, height;

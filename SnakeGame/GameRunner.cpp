@@ -12,7 +12,7 @@ bool GameRunner::run()
 void GameRunner::setup()
 {
 	HANDLE out = GetStdHandle(STD_OUTPUT_HANDLE);
-	CONSOLE_CURSOR_INFO     cursorInfo;
+	CONSOLE_CURSOR_INFO cursorInfo;
 	GetConsoleCursorInfo(out, &cursorInfo);
 	cursorInfo.bVisible = false;
 	SetConsoleCursorInfo(out, &cursorInfo);
