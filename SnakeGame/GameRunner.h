@@ -22,6 +22,7 @@ protected:
 private:
 	Snake snake;
 	Fruit fruit;
+	bool gameOver = false;
 };
 
 #endif // !_gamerunner_h_

@@ -31,6 +31,16 @@ bool Snake::isSnakeField(int x, int y)
     return false;
 }
 
+bool Snake::headHitBody()
+{
+	for (Node* tmp = head->next; tmp != nullptr; tmp = tmp->next)
+	{
+		if (head->field == tmp->field)
+			return true;
+	}
+    return false;
+}
+
 void Snake::draw()
 {
     using std::cout;

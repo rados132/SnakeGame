@@ -15,6 +15,7 @@ public:
 	void setDirection(Direction newDirection);
 	void moveSnake();
 	bool isSnakeField(int x, int y);
+	bool headHitBody();
 	Snake& addToTail(int x, int y);
 	Field& getHead();
 

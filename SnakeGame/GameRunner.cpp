@@ -6,6 +6,7 @@ bool GameRunner::run()
 {
 	GameRunner::setup();
 	GameRunner::loop();
+	std::cout << '\n' << "Game Over!";
 	return false;
 }
 
@@ -22,7 +23,7 @@ void GameRunner::setup()
 
 void GameRunner::loop()
 {
-	while (true)
+	while (!gameOver)
 	{
 		draw();
 		getInput();
@@ -84,6 +85,11 @@ void GameRunner::getInput()
 void GameRunner::logic()
 {
 	snake.moveSnake();
+	if (snake.headHitBody())
+	{
+		gameOver = true;
+		return;
+	}
 	if (snake.getHead() == fruit)
 	{
 		snake.addToTail(fruit.getX(), fruit.getY());
