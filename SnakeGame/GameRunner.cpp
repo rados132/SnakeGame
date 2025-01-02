@@ -16,6 +16,8 @@ void GameRunner::setup()
 	GetConsoleCursorInfo(out, &cursorInfo);
 	cursorInfo.bVisible = false;
 	SetConsoleCursorInfo(out, &cursorInfo);
+
+	fruit.generateNewFruit();
 }
 
 void GameRunner::loop()
@@ -43,6 +45,8 @@ void GameRunner::draw()
 				cout << '#';
 			else if (snake.isSnakeField(j, i))
 				cout << 'O';
+			else if (fruit.isFruitField(j, i))
+				cout << 'X';
 			else
 				cout << ' ';
 		}
@@ -80,4 +84,9 @@ void GameRunner::getInput()
 void GameRunner::logic()
 {
 	snake.moveSnake();
+	if (snake.getHead() == fruit)
+	{
+		snake.addToTail(fruit.getX(), fruit.getY());
+		fruit.generateNewFruit();
+	}
 }

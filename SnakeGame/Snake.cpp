@@ -16,6 +16,11 @@ Snake& Snake::addToTail(int x, int y)
     return *this;
 }
 
+Field& Snake::getHead()
+{
+	return head->field;
+}
+
 bool Snake::isSnakeField(int x, int y)
 {
     for (Node* tmp = head; tmp != nullptr; tmp = tmp->next)

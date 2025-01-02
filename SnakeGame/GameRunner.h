@@ -2,6 +2,7 @@
 #define _gamerunner_h_
 
 #include "Snake.h"
+#include "Fruit.h"
 #include <Windows.h>
 
 extern const int width, height;
@@ -20,6 +21,7 @@ protected:
 
 private:
 	Snake snake;
+	Fruit fruit;
 };
 
 #endif // !_gamerunner_h_

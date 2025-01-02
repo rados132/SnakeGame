@@ -4,6 +4,7 @@
 class Field
 {
 public:
+	Field() {}
 	Field(int x, int y)
 		: _x(x), _y(y)
 	{
@@ -16,7 +17,7 @@ public:
 
 	friend bool operator==(Field& lhs, Field& rhs);
 
-private:
+protected:
 	int _x, _y;
 };
 

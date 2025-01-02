@@ -15,10 +15,8 @@ public:
 	void setDirection(Direction newDirection);
 	void moveSnake();
 	bool isSnakeField(int x, int y);
-
-protected:
 	Snake& addToTail(int x, int y);
-	
+	Field& getHead();
 
 private:
 	struct Node
