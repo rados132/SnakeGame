@@ -4,6 +4,6 @@ const int width = 40, height = 20;
 
 int main()
 {
-	GameRunner gameRunner = GameRunner();
+	GameRunner gameRunner;
 	while (gameRunner.run());
 }

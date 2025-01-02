@@ -30,7 +30,6 @@ void GameRunner::loop()
 
 void GameRunner::draw()
 {
-	// popraviti ispis zidova
 	using std::cout;
 	system("cls");
 	for (int i = 0; i < width; i++)
@@ -42,6 +41,8 @@ void GameRunner::draw()
 		{
 			if (j == 0 || j == width - 1)
 				cout << '#';
+			else if (snake.isSnakeField(j, i))
+				cout << 'O';
 			else
 				cout << ' ';
 		}
@@ -49,8 +50,6 @@ void GameRunner::draw()
 	}
 	for (int i = 0; i < width; i++)
 		cout << '#';
-	Sleep(10);
-	snake.draw();
 	Sleep(10);
 }
 

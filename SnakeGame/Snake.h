@@ -14,10 +14,11 @@ public:
 	void draw();
 	void setDirection(Direction newDirection);
 	void moveSnake();
+	bool isSnakeField(int x, int y);
 
 protected:
 	Snake& addToTail(int x, int y);
-	bool isSnakeField(int x, int y);
+	
 
 private:
 	struct Node
