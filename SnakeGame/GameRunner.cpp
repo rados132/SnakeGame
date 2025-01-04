@@ -1,11 +1,12 @@
 #include "GameRunner.h"
-#include <iostream>
+#include <Windows.h>
 #include <conio.h>
+#include <iostream>
 
 bool GameRunner::run()
 {
-	GameRunner::setup();
-	GameRunner::loop();
+	setup();
+	loop();
 	std::cout << '\n' << "Game Over!";
 	return false;
 }
@@ -33,10 +34,12 @@ void GameRunner::loop()
 
 void GameRunner::draw()
 {
-	using std::cout;
+	Sleep(40);
 	system("cls");
+	using std::cout;
 	for (int i = 0; i < width; i++)
 		cout << '#';
+	cout << ' ' << "Snake Game v1.0 © Rados Radovanovic 2024.";
 	cout << '\n';
 	for (int i = 1; i < height; i++)
 	{
@@ -55,7 +58,8 @@ void GameRunner::draw()
 	}
 	for (int i = 0; i < width; i++)
 		cout << '#';
-	Sleep(10);
+	cout << '\n';
+	cout << "Score: " << score;
 }
 
 void GameRunner::getInput()
@@ -94,5 +98,6 @@ void GameRunner::logic()
 	{
 		snake.addToTail(fruit.getX(), fruit.getY());
 		fruit.generateNewFruit();
+		score++;
 	}
 }

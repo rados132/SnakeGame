@@ -8,12 +8,10 @@ enum Direction { STOP = 0, UP, DOWN, LEFT, RIGHT };
 class SnakeField : public Field
 {
 public:
-	SnakeField(int x, int y, Direction direction = STOP)
-		: Field(x, y), _direction(direction)
-	{
-	}
+	SnakeField(int x, int y, Direction direction = STOP);
 
 	Direction getDirection() const;
+
 	void setDirection(Direction newDirection);
 	void moveField();
 

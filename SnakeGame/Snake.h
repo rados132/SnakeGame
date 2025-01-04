@@ -11,7 +11,6 @@ public:
 	Snake();
 	//~Snake();
 	
-	void draw();
 	void setDirection(Direction newDirection);
 	void moveSnake();
 	bool isSnakeField(int x, int y);

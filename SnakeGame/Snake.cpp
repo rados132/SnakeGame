@@ -6,7 +6,6 @@ Snake::Snake()
 {
     addToTail(width / 2, height / 2);
     addToTail(width / 2, height / 2 + 1);
-    addToTail(width / 2, height / 2 + 2);
 }
 
 Snake& Snake::addToTail(int x, int y)
@@ -39,27 +38,6 @@ bool Snake::headHitBody()
 			return true;
 	}
     return false;
-}
-
-void Snake::draw()
-{
-    using std::cout;
-    system("cls");
-    for (int i = 1; i < height - 1; i++)
-    {
-        for (int j = 1; j < width - 1; j++)
-        {
-            if (isSnakeField(j, i))
-            {
-                cout << 'O';
-            }
-            else
-            {
-                cout << ' ';
-            }
-        }
-        cout << '\n';
-    }
 }
 
 void Snake::setDirection(Direction newDirection)

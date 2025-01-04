@@ -1,5 +1,13 @@
 #include "Field.h"
 
+Field::Field() : _x(0), _y(0)
+{
+}
+
+Field::Field(int x, int y) : _x(x), _y(y)
+{
+}
+
 int Field::getX() const
 {
     return _x;

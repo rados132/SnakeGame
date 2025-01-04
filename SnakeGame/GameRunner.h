@@ -3,7 +3,6 @@
 
 #include "Snake.h"
 #include "Fruit.h"
-#include <Windows.h>
 
 extern const int width, height;
 
@@ -23,6 +22,7 @@ private:
 	Snake snake;
 	Fruit fruit;
 	bool gameOver = false;
+	int score = 0;
 };
 
 #endif // !_gamerunner_h_

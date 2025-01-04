@@ -2,6 +2,11 @@
 
 extern const int width, height;
 
+SnakeField::SnakeField(int x, int y, Direction direction)
+	: Field(x, y), _direction(direction)
+{
+}
+
 Direction SnakeField::getDirection() const
 {
 	return _direction;

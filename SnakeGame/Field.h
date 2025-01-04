@@ -4,14 +4,12 @@
 class Field
 {
 public:
-	Field() {}
-	Field(int x, int y)
-		: _x(x), _y(y)
-	{
-	}
+	Field();
+	Field(int x, int y);
 
 	int getX() const;
 	int getY() const;
+
 	void setX(int x);
 	void setY(int y);
 
