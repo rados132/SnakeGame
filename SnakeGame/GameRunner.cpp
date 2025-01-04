@@ -7,7 +7,7 @@ bool GameRunner::run()
 {
 	setup();
 	loop();
-	std::cout << '\n' << "Game Over!";
+	std::cout << '\n' << "Game Over!" << '\n';
 	return false;
 }
 
